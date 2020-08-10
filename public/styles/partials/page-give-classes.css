@@ -51,7 +51,7 @@
 }
 
 #page-give-classes fieldset legend button:hover{
-    transform: translateY(-5px); /*propriedade que vai receber várias transformações de elemento, nesse caso vai modificar o eixo Y*/
+    transform: translateY(-5px); 
     color: var(--color-primary-dark);
 }
 
@@ -59,9 +59,9 @@
     margin-top: 6.4rem;
 }
 
-#page-give-classes .input-block+.input-block, /*pegando um input-block seguido de input-block, no caso todo input-block que tenha um anterior a ele*/
-#page-give-classes .input-block+.textarea, /*pegando um textarea que tenha um input-block anterior a ele*/
-#page-give-classes .select-block+.input-block { /*pegando um input-block que tenha um select-block anterior a ele*/
+#page-give-classes .input-block+.input-block,
+#page-give-classes .input-block+.textarea, 
+#page-give-classes .select-block+.input-block {
     margin-top: 2.4rem;
 }
 
@@ -139,7 +139,6 @@
 
     #page-give-classes #schedule-items .select-block+.input-block,
     #page-give-classes #schedule-items .input-block+.input-block{
-        /*margin-top: 0 !important; = o important significa que essa propriedade no meu css é mais importante de todas*/
         margin-top: 0;
     }
 

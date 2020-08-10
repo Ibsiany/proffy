@@ -11,14 +11,14 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between; /* um espaço entre eles*/
+    justify-content: space-between; 
 
     padding: 1.6rem 0;
 }
 
 .page-header .top-bar-container a {
     height: 3.2rem;
-    transition: opacity 0.2s; /* significa que ao ocorrer um evento no botão ele terá uma opacidade em 0.2s*/
+    transition: opacity 0.2s; 
 }
 
 .page-header .top-bar-container a:hover {

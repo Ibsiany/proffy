@@ -13,7 +13,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
-    <script src="/scripts/addField.js" defer> // o defer significa que é para ler o script depois de um tempo
+    <script src="/scripts/addField.js" defer> 
      </script>
 
 
@@ -35,25 +35,25 @@
              </div>
          </header>
 
-         <main> <!-- conteúdo principal da página -->
-            <form action="/save-classes" id="create-class" method="POST"> <!-- AO MUDAR PARA POST EU FAÇO COM QUE MEUS DADOS FIQUE ESCONDIDO SEM APARECER NA URL-->
+         <main> 
+            <form action="/save-classes" id="create-class" method="POST"> 
                 <fieldset>
-                    <legend>Seus dados</legend> <!--nome do agrupamento de dados-->
+                    <legend>Seus dados</legend>
                     <div class="input-block">
                         <label for="name">Nome completo</label>
-                        <input name="name" id="name" required> <!--required significa que o campo é obrigatório-->                       
+                        <input name="name" id="name" required> 
                     </div>
                     <div class="input-block">
-                        <label for="avatar">Link da sua foto<small>(comece com https://)</small></label> <!-- small significa um texto pequeno-->
-                        <input name="avatar" id="avatar" type="url" required> <!-- o tipo desse input obriga que a pessoa coloque links-->
+                        <label for="avatar">Link da sua foto<small>(comece com https://)</small></label> 
+                        <input name="avatar" id="avatar" type="url" required> 
                     </div>
                     <div class="input-block">
                         <label for="whatsapp">Whatsapp<small>(somente números)</small></label>
                         <input name="whatsapp" id="whatsapp" type="number" required>
                     </div>
-                    <div class="textarea-block"> <!-- o textarea é uma forma de digitar de mutilinhas, podendo digitar por várias linhas-->
+                    <div class="textarea-block">
                         <label for="bio">Biografia</label>
-                        <textarea name="bio" id="bio" required></textarea> <!-- não se pode fazer uma quebra de linha aqui se não o cursor fica loco-->
+                        <textarea name="bio" id="bio" required></textarea>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -62,11 +62,10 @@
                         <label for="subject">Matéria</label>
                         <select name="subject" id="subject" required>
                             <option value="">Selecione uma opção</option>
-                            <!--<option value="1">Artes</option> toda option precisa ter um valor para ser identificado-->
-                            {% for subject in subjects %} <!-- estrutura de repetição chamando esses objetos cada vez que tiver um objeto-->
+                            {% for subject in subjects %} 
                             <option value="{{loop.index}}">
                                 {{subject}}
-                            </option> <!-- toda option precisa ter um valor para ser identificado-->
+                            </option> 
                             {%endfor%}
                         </select>
                     </div>
@@ -91,7 +90,7 @@
                                     {{weekday}}
                                 </option> 
                                 {%endfor%}
-                            </select> <!-- [] significa que pode receber mais de um valor-->
+                            </select>
                         </div>
 
                         <div class="input-block">
@@ -109,17 +108,13 @@
             <footer>
                     <p>
                          <img src="/images/icons/warning.svg" alt="Aviso importante">
-                         Importante! <br> <!-- tag br faz uma quebra de linha-->
+                         Importante! <br>
                         Preencha todos os dados
                     </p>
-                <button type="submit" form="create-class"> Salvar cadastro</button> <!-- Se o botão estivesse dentro do formulário com o tipo submit ele irá enviar o formulário, portanto colocando a opção form e o id do formulário que desejo enviar ele envia o formulário a partir dessa opção-->      
+                <button type="submit" form="create-class"> Salvar cadastro</button> 
             </footer>
 
          </main> 
     </div>
-
-    <!--<script> //o script deve ficar no final pois o html le linha por linha, e se jogar em cima o container ainda não teria sido feito
-        document.querySelector('#container').style.backgroundColor = "red"  // aqui é o import para programar com java, o igual significa que aquele elemento receberá tal valor que deve estar entre ""
-    </script>--> 
 </body>
 </html>

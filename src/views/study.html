@@ -29,16 +29,16 @@
                  <strong> Esses são os proffys disponíveis</strong>
                  <form id="search-teachers">
                     <div class="select-block">
-                     <label for="subject">Matéria</label> <!-- o for irá procurar um name que seja igual a ele-->
-                         <select name="subject" id="subject"> <!-- campo de seleção que mostra em formato de listas-->
-                            <option value="" disabled="" hidden="">Selecione uma opção</option> <!-- essa option não tem valor, pois nesse caso é necessário informar um valor válido, o disable irá desabilitar o campo e o hidden irá ocultá-lo, dessa forma não irá aparecer na lista-->
+                     <label for="subject">Matéria</label> 
+                         <select name="subject" id="subject"> 
+                            <option value="" disabled="" hidden="">Selecione uma opção</option> 
                             
-                            {% for subject in subjects %} <!-- estrutura de repetição chamando esses objetos cada vez que tiver um objeto-->
+                            {% for subject in subjects %} 
                             <option value="{{loop.index}}"{{"selected" if filters.subject == loop.index}}>
                                 {{subject}}
-                            </option> <!-- toda option precisa ter um valor para ser identificado-->
+                            </option> 
                             {%endfor%}
-                            <!--<option value="4" {{"selected" if filters.subject == "4"}} >Educação física</option>  selected (que é para saber se aquele valor está adicionado) será adicionado se o objeto x for igual ao valor y-->
+                            
                          </select>
                     </div>
                     <div class="select-block">
@@ -54,22 +54,20 @@
                     </div>
                     <div class="input-block">
                         <label for="time">Hora</label>
-                        <input name="time" id="time" type="time" value="{{filters.time}}" > <!-- podendo ser feito também com type="number" e min="0" e max="24", definindo o tipo de texto e a quatidade maxima e minima de números, o name é para o objeto for encontrar-->
+                        <input name="time" id="time" type="time" value="{{filters.time}}" >
                     </div>
-                    <button type="submit">Filtrar</button> <!-- esse botão com o tipo submit significa que ele vai pegar o form e enviar o formulário-->
+                    <button type="submit">Filtrar</button> 
                  </form>
              </div>
          </header>
 
-         <main> <!--conteúdo principal da página-->
+         <main> 
 
-            {% if proffys =="" %} <!-- se proffys for igual vazio(condição do nunjucks)-->
+            {% if proffys =="" %}
                     <p class="no-results"> Nenhum professor encontrado com a sua pesquisa.</p>
-            {% else %} <!--se não-->
-            
-                <!--estrutura de repetição-->
-                {%for proffy in proffys %} <!-- iniciando o templete engines, para um proffy em proffys-->
-                    <article class="teacher-item"> <!-- o conteúdo será repetido-->
+            {% else %}
+                {%for proffy in proffys %} 
+                    <article class="teacher-item"> 
                         <header>
                             <img src="{{proffy.avatar}}" alt="{{proffy.name}}">
                             <div>
@@ -88,9 +86,9 @@
                                 </a>
                         </footer>
                     </article>  
-                {%endfor%}<!-- finalizando o template engines-->
+                {%endfor%}
             
-            {% endif %} <!--fechando a função if-->
+            {% endif %} 
          </main> 
     </div>
 </body>
